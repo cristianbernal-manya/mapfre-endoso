@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! - Endoso Devolución MAPFRE</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER SIMPLIFICADO */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* SECCIÓN 1: MENSAJE DE CONFIRMACIÓN */
+        .confirmation-section {
+            background: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .success-shield {
+            width: 120px;
+            height: 120px;
+            background: #28a745;
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .success-shield::before {
+            content: "🛡️";
+            font-size: 60px;
+            position: absolute;
+        }
+
+        .success-shield::after {
+            content: "✅";
+            font-size: 30px;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #ffffff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .confirmation-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .confirmation-content h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .confirmation-content p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .expectations-text {
+            background: #f0f8ff;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .expectations-text strong {
+            color: #007bff;
+        }
+
+        /* SECCIÓN 2: REAFIRMACIÓN */
+        .reaffirmation-section {
+            padding: 80px 0;
+            background: #f8f8f8;
+        }
+
+        .reaffirmation-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .decision-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .decision-point {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .decision-point-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .decision-point h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .decision-point p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* SECCIÓN 3: PREPÁRATE PARA EL ÉXITO */
+        .preparation-section {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .preparation-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .preparation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .preparation-card {
+            background: #f8f8f8;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .preparation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .preparation-card-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .preparation-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .preparation-card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .preparation-button {
+            background: #333;
+            color: #ffffff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .preparation-button:hover {
+            background: #555;
+        }
+
+        /* SECCIÓN 4: CONEXIÓN SOCIAL */
+        .social-section {
+            padding: 80px 0;
+            background: #333;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .social-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .social-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #ccc;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            color: #333;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        /* SECCIÓN 5: FOOTER */
+        .footer {
+            background: #f8f8f8;
+            color: #666;
+            padding: 40px 0;
+            border-top: 1px solid #e0e0e0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-main-link {
+            display: inline-block;
+            background: #333;
+            color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 20px;
+            transition: background 0.3s;
+        }
+
+        .footer-main-link:hover {
+            background: #555;
+        }
+
+        .footer-legal {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .confirmation-content h1 {
+                font-size: 28px;
+            }
+
+            .confirmation-content p {
+                font-size: 16px;
+            }
+
+            .expectations-text {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            .reaffirmation-section h2,
+            .preparation-section h2,
+            .social-section h2 {
+                font-size: 26px;
+            }
+
+            .decision-points {
+                grid-template-columns: 1fr;
+            }
+
+            .preparation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .preparation-card {
+                padding: 30px 20px;
+            }
+
+            .social-icons {
+                gap: 20px;
+            }
+
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .confirmation-section,
+        .reaffirmation-section,
+        .preparation-section,
+        .social-section {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .success-shield {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER SIMPLIFICADO -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">MAPFRE</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN 1: MENSAJE DE CONFIRMACIÓN -->
+    <section class="confirmation-section">
+        <div class="container">
+            <div class="success-shield"></div>
+            <div class="confirmation-content">
+                <h1>¡Excelente decisión! Hemos recibido tu solicitud.</h1>
+                <p>Hemos recibido tus datos correctamente. Acabas de dar el paso más inteligente para tu crédito.</p>
+                
+                <div class="expectations-text">
+                    <p><strong>Un asesor experto en endosos de MAPFRE se pondrá en contacto contigo por teléfono o WhatsApp en las próximas 24 horas hábiles.</strong> Él te guiará en todo el proceso para presentarlo a tu banco.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: REAFIRMACIÓN DE TU DECISIÓN -->
+    <section class="reaffirmation-section">
+        <div class="container">
+            <h2>Mientras esperas, recuerda por qué tomaste la mejor decisión:</h2>
+            <div class="decision-points">
+                <div class="decision-point">
+                    <span class="decision-point-icon">💰</span>
+                    <h3>De Gasto a Inversión</h3>
+                    <p>Convertiste un pago obligatorio en un ahorro que volverá a ti.</p>
+                </div>
+                <div class="decision-point">
+                    <span class="decision-point-icon">🛡️</span>
+                    <h3>Protección Superior</h3>
+                    <p>No solo cubres tu deuda, también proteges tu capacidad de generar ingresos con la cobertura por invalidez.</p>
+                </div>
+                <div class="decision-point">
+                    <span class="decision-point-icon">🏦</span>
+                    <h3>Total Compatibilidad</h3>
+                    <p>Nuestras pólizas son aceptadas por las principales entidades financieras del país.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: PREPÁRATE PARA EL ÉXITO -->
+    <section class="preparation-section">
+        <div class="container">
+            <h2>Prepárate para conversar con tu asesor:</h2>
+            <div class="preparation-grid">
+                <div class="preparation-card">
+                    <span class="preparation-card-icon">📚</span>
+                    <h3>El Centro de Recursos de Endoso</h3>
+                    <p>Descarga la guía sobre el proceso con los bancos y la comparativa detallada vs. el desgravamen tradicional.</p>
+                    <a href="endoso.html#recursos" class="preparation-button">Ir a Recursos</a>
+                </div>
+                <div class="preparation-card">
+                    <span class="preparation-card-icon">⚖️</span>
+                    <h3>Conoce tus Derechos como Cliente</h3>
+                    <p>Infórmate sobre tu derecho a elegir tu propio seguro de desgravamen según la ley N° 29946. Tú tienes el control.</p>
+                    <a href="#" onclick="showLawInfo()" class="preparation-button">Leer más sobre la ley</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: CONEXIÓN SOCIAL -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Únete a nuestra comunidad</h2>
+            <p>Síguenos en nuestras redes sociales y mantente al día con consejos, novedades y beneficios exclusivos.</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon" title="Facebook">📘</a>
+                <a href="#" class="social-icon" title="Instagram">📷</a>
+                <a href="#" class="social-icon" title="LinkedIn">💼</a>
+                <a href="#" class="social-icon" title="YouTube">📺</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="endoso.html" class="footer-main-link">Volver a la página principal de MAPFRE</a>
+                <div class="footer-legal">
+                    © 2025 MAPFRE Perú. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal informativo sobre la ley -->
+    <div id="lawModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);">
+        <div style="background-color: #ffffff; margin: 10% auto; padding: 40px; border-radius: 10px; width: 90%; max-width: 600px; position: relative;">
+            <button onclick="closeLawModal()" style="position: absolute; right: 20px; top: 20px; background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+            <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: #333;">Ley N° 29946 - Tu Derecho a Elegir</h3>
+            <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 20px;">
+                La <strong>Ley N° 29946</strong> establece que los deudores de créditos hipotecarios, vehiculares y de capital de trabajo tienen el <strong>derecho a contratar libremente</strong> los seguros de desgravamen y/o el bien financiado.
+            </p>
+            <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 20px;">
+                Esto significa que <strong>no estás obligado a contratar el seguro que te ofrece tu banco</strong>. Puedes elegir el que mejor se adapte a tus necesidades y te ofrezca mayores beneficios.
+            </p>
+            <p style="font-size: 16px; color: #666; line-height: 1.6; margin-bottom: 30px;">
+                El Endoso Devolución de MAPFRE cumple con todos los requisitos legales y es aceptado por las principales entidades financieras del país.
+            </p>
+            <button onclick="closeLawModal()" style="background: #333; color: #ffffff; padding: 12px 24px; border: none; border-radius: 5px; font-weight: 600; cursor: pointer;">Entendido</button>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar información sobre la ley
+        function showLawInfo() {
+            document.getElementById('lawModal').style.display = 'block';
+        }
+
+        // Función para cerrar el modal de la ley
+        function closeLawModal() {
+            document.getElementById('lawModal').style.display = 'none';
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const modal = document.getElementById('lawModal');
+            if (event.target === modal) {
+                closeLawModal();
+            }
+        }
+
+        // Animación de entrada escalonada
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+
+        // Efecto de hover en las tarjetas de preparación
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.preparation-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.background = '#ffffff';
+                    this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.background = '#f8f8f8';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
